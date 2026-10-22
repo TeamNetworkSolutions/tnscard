@@ -231,3 +231,31 @@ function block_text_translation_check($text)
 
     return __($key) !== $key;
 }
+
+/**
+ * Record which block's assets the /block-asset/{type} route should serve.
+ *
+ * LinkTypeViewController::getParamForm() and the public page's button loop
+ * both call this before rendering a block, but LinkStack 4.8.7 never defines
+ * it. The result is a 500 on every block type except "predefined" — in the
+ * studio when picking a block, and on a profile page as soon as it holds one.
+ *
+ * The block type is kept on the container and shared with the view so a block
+ * that needs to build its own asset URLs can read it.
+ */
+function setBlockAssetContext($type)
+{
+    if (!is_string($type) || $type === '') {
+        return null;
+    }
+
+    // Same guard the /block-asset route applies, so nothing can smuggle a path.
+    if (preg_match('/\.\.|\/|\\\\/', $type)) {
+        return null;
+    }
+
+    app()->instance('block.asset.context', $type);
+    view()->share('blockAssetType', $type);
+
+    return $type;
+}
