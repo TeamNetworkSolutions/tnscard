@@ -9,14 +9,13 @@
 	</div>
 
 	@if(env('DISPLAY_CREDIT') === true)
-	{{-- Removed class spacing --}}
-	<a href="https://teamnetworksolutions.com" target="_blank" rel="noopener" title="Team Network Solutions" style="text-decoration:none;">
-		<div style="display:inline-block;padding-bottom:12px;" class="credit-hover hvr-grow fadein">
-			<img src="{{ asset('assets/tnscard/images/tns-mark.png') }}" alt="Team Network Solutions" style="width:44px;height:auto;">
+	{{-- Logo and credit line both lead to tnscard.com, whose footer carries the
+	     AGPL-3.0 source offer for anyone viewing a card. --}}
+	<a href="{{ env('CREDIT_URL', 'https://tnscard.com') }}" target="_blank" rel="noopener" title="TNS Card" style="text-decoration:none;display:block;">
+		<div style="display:inline-block;padding-bottom:8px;" class="credit-hover hvr-grow fadein">
+			<img src="{{ asset('assets/tnscard/images/tns-mark.png') }}" alt="TNS Card" style="width:44px;height:auto;">
 		</div>
+		<div class="credit-txt-clr fadein" style="padding-bottom:40px;font-size:11px;opacity:.55;">Powered by Team Network Solutions</div>
 	</a>
 	@endif
-	<div style="padding-bottom:40px;font-size:11px;opacity:.55;" class="fadein">
-		<a class="credit-txt-clr" style="text-decoration:none;" href="{{ env('SOURCE_CODE_URL', 'https://github.com/TeamNetworkSolutions/tnscard') }}" target="_blank" rel="noopener">Source code (AGPL-3.0)</a>
-	</div>
 	</div>
