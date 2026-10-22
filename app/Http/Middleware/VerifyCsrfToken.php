@@ -12,6 +12,9 @@ class VerifyCsrfToken extends Middleware
      * @var array
      */
     protected $except = [
-        //
+        // TNS Card: the landing page sets no session cookie, so the public lead
+        // form cannot carry a CSRF token. It is protected by a honeypot, a timing
+        // check, a same-origin check and rate limiting instead (LeadController).
+        'leads',
     ];
 }

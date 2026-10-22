@@ -86,6 +86,9 @@ Route::post('/report', [UserController::class, 'report'])->name('report');
 
 Route::get('/demo-page', [App\Http\Controllers\HomeController::class, 'demo'])->name('demo')->middleware('disableCookies');
 
+// TNS Card: landing page lead form (max 6 submissions per minute per IP)
+Route::post('/leads', [App\Http\Controllers\LeadController::class, 'store'])->name('leads.store')->middleware('throttle:6,1');
+
 Route::get('/block-asset/{type}', [LinkTypeViewController::class, 'blockAsset'])
   ->name('block.asset')->where(['type' => '[a-zA-Z0-9_-]+']);
 
