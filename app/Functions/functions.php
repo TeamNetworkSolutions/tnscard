@@ -67,8 +67,8 @@ if (!function_exists('preloadDirectoryFiles')) {
 
 function findFile($name)
 {
-    $directory = base_path("/assets/linkstack/images/");
-    $files = preloadDirectoryFiles($directory, 'linkstack_images_files');
+    $directory = base_path("/assets/tnscard/images/");
+    $files = preloadDirectoryFiles($directory, 'tnscard_images_files');
 
     $pattern = '/^' . preg_quote($name, '/') . '(_\w+)?\.\w+$/i';
     foreach ($files as $file) {
@@ -199,4 +199,5 @@ function footer($key)
     } else {
         $title = env('TITLE_FOOTER_'.$upperStr);
     }
+    return $title;
 }

@@ -379,8 +379,8 @@ class ButtonSeeder extends Seeder
             ],
 
             [
-                "name" => "littlelink-custom",
-                "alt" => "LittleLink Custom",
+                "name" => "tnscard-custom",
+                "alt" => "TNS Card",
                 "exclude" => true,
                 "group" => "default",
                 "mb" => false,
@@ -803,8 +803,8 @@ class ButtonSeeder extends Seeder
             ],
 
             [
-                "name" => "linkstack",
-                "alt" => "LinkStack",
+                "name" => "tnscard",
+                "alt" => "TNS Card",
                 "exclude" => false,
                 "group" => "default",
                 "mb" => false,

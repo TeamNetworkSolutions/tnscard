@@ -1,9 +1,9 @@
 {
-    "name": "linkstackorg/linkstack",
+    "name": "tnscard/tnscard",
     "type": "project",
-    "description": "LinkStack is a highly customizable link sharing platform",
+    "description": "TNS Card: digital business cards and mini websites",
     "keywords": ["link"],
-    "license": "GPL-3.0-or-later",
+    "license": "AGPL-3.0-only",
     "require": {
         "php": ">=8.0",
         "awssat/laravel-visits": "^6.0",

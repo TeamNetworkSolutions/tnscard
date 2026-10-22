@@ -72,12 +72,12 @@ Route::get('/panel/diagnose', function () {
 $custom_prefix = config('advanced-config.custom_url_prefix');
 Route::get('/going/{id?}', [UserController::class, 'clickNumber'])->where('link', '.*')->name('clickNumber')->middleware('disableCookies');
 Route::get('/info/{id?}', [AdminController::class, 'redirectInfo'])->name('redirectInfo');
-if($custom_prefix != ""){Route::get('/' . $custom_prefix . '{littlelink}', [UserController::class, 'littlelink'])->name('littlelink');}
-Route::get('/@{littlelink}', [UserController::class, 'littlelink'])->name('littlelink')->middleware('disableCookies');
+if($custom_prefix != ""){Route::get('/' . $custom_prefix . '{tnsprofile}', [UserController::class, 'tnsprofile'])->name('tnsprofile');}
+Route::get('/@{tnsprofile}', [UserController::class, 'tnsprofile'])->name('tnsprofile')->middleware('disableCookies');
 Route::get('/pages/'.strtolower(footer('Terms')), [AdminController::class, 'pagesTerms'])->name('pagesTerms')->middleware('disableCookies');
 Route::get('/pages/'.strtolower(footer('Privacy')), [AdminController::class, 'pagesPrivacy'])->name('pagesPrivacy')->middleware('disableCookies');
 Route::get('/pages/'.strtolower(footer('Contact')), [AdminController::class, 'pagesContact'])->name('pagesContact')->middleware('disableCookies');
-Route::get('/theme/@{littlelink}', [UserController::class, 'theme'])->name('theme');
+Route::get('/theme/@{tnsprofile}', [UserController::class, 'theme'])->name('theme');
 Route::get('/vcard/{id?}', [UserController::class, 'vcard'])->name('vcard');
 Route::get('/u/{id?}', [UserController::class, 'userRedirect'])->name('userRedirect');
 
@@ -183,8 +183,8 @@ Route::group([
     Route::post('/admin/config', [AdminController::class, 'editConfig'])->name('editConfig');
     Route::get('/send-test-email', [AdminController::class, 'SendTestMail'])->name('SendTestMail');
     Route::get('/auth-as/{id}', [AdminController::class, 'authAsID'])->name('authAsID');
-    Route::get('/theme-updater', function () {return view('studio/theme-updater', []);});
-    Route::get('/update', function () {return view('update', []);});
+    Route::get('/theme-updater', function () {return redirect(url('dashboard'));}); // TNS Card: upstream theme updater disabled
+    Route::get('/update', function () {return redirect(url('dashboard'));}); // TNS Card: upstream updater disabled
     Route::get('/backup', function () {return view('backup', []);});
 
     Route::group(['namespace'=>'App\Http\Controllers\Admin', 'prefix'=>'admin', 'as'=>'admin'],function() {
@@ -207,5 +207,5 @@ Route::get('/{any}', function () {
 require __DIR__.'/auth.php';
 
 if(config('advanced-config.custom_url_prefix') == ""){
-  Route::get('/{littlelink}', [UserController::class, 'littlelink'])->name('littlelink');
+  Route::get('/{tnsprofile}', [UserController::class, 'tnsprofile'])->name('tnsprofile');
 }

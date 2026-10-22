@@ -7,7 +7,7 @@ $analytics =
 | Analytics
 |--------------------------------------------------------------------------
 |
-| Add external analytics services to your LinkStack instance by adding them below.
+| Add external analytics services to your TNS Card instance by adding them below.
 | Everything you enter below will be added to the <head> tag of every page.
 | Formatting in plain HTML is expected.
 |
@@ -32,15 +32,15 @@ return [
     |--------------------------------------------------------------------------
     |
     | Will only be active if "CUSTOM_META_TAGS" is set to "true" in the config.
-    | These tags will only be applied to the home page or if a LinkStack page 
+    | These tags will only be applied to the home page or if a TNS Card page 
     | is set as the homepage in the config (for example: HOME_URL="admin").
     | 
     | Empty entries will be ignored.
     |
     */
 
-    'title'           => '', // Overrides the default meta page title. Leave empty to use your LinkStack page title as the title.
-    'description'     => '', // Overrides the default meta page description. Leave empty to use your LinkStack page description as the description.
+    'title'           => '', // Overrides the default meta page title. Leave empty to use your TNS Card page title as the title.
+    'description'     => '', // Overrides the default meta page description. Leave empty to use your TNS Card page description as the description.
     'robots'          => 'index,follow',
     'viewport'        => 'width=device-width, initial-scale=1',
     'canonical_url'   => '', // Tells search engines to index "https://example.com/" instead of "https://example.com/@admin", for example.
@@ -56,11 +56,11 @@ return [
     |
     */
 
-    // Overwrites default page title after the LinkStack name on LinkStack pages.
-    // Example: "admin 🔗 LinkStack"
+    // Overwrites default page title after the TNS Card name on TNS Card pages.
+    // Example: "admin 🔗 TNS Card"
     //                 ⤌----------⤍
     //                 ⬑ What you can change with this setting.
-    'linkstack_title' => '',
+    'tnscard_title' => '',
 
 
     // Either "true", "false" or "auth". 
@@ -87,7 +87,7 @@ return [
 
     'custom_home_url' => '/home', // Only applies if you set a "HOME_URL" in the config.
 
-    // The URL prefix is the symbol that comes before a LinkStack URL.
+    // The URL prefix is the symbol that comes before a TNS Card URL.
     // For example the '@' in 'example.com/@admin'.
     // If empty no prefix is required.
     'custom_url_prefix' => '+',
@@ -131,7 +131,7 @@ return [
     | In the 'title' field, changes the text on a button, such as 'custom' and 'custom_website'.
     | 
     | In the 'icon' field, uses the same syntax as the Button Editor on the Admin Panel. 
-    | This allows you to add your own icons to 'custom' buttons. You can find a list of available icons on linkstack.org/fa.
+    | This allows you to add your own icons to 'custom' buttons. You can find a list of available icons on tnscard.org/fa.
     | 
     | In the 'custom_css' field, here you can enter custom CSS to change the color of your button. 
     | If you don't feel comfortable working with CSS,
@@ -143,25 +143,25 @@ return [
 
     'buttons' => array(
       array(
-        'button' => 'github',
-        'link' => 'https://github.com/linkstackorg/linkstack',
-        'title' => 'GitHub',
-        'icon' => '',
-        'custom_css' => ''
-      ),
-      array(
-        'button' => 'linkstack',
-        'link' => 'https://linkstack.org',
-        'title' => 'Project Website',
-        'icon' => '',
-        'custom_css' => ''
+        'button' => 'custom',
+        'link' => 'https://tnscard.com',
+        'title' => 'Website',
+        'icon' => 'fa-globe',
+        'custom_css' => 'color:#ffffff; background:#1d4ed8;'
       ),
       array(
         'button' => 'custom',
-        'link' => 'https://linkstack.org/donate',
-        'title' => 'Help us out',
-        'icon' => 'fa-hand-holding-heart',
-        'custom_css' => 'color:#ffffff; background-image:radial-gradient(circle, #4b1977 0%, #2b0081 95%);'
+        'link' => 'tel:+10000000000',
+        'title' => 'Call',
+        'icon' => 'fa-phone',
+        'custom_css' => 'color:#ffffff; background:#2673d1;'
+      ),
+      array(
+        'button' => 'custom',
+        'link' => 'https://tnscard.com',
+        'title' => 'Save Contact',
+        'icon' => 'fa-address-card',
+        'custom_css' => 'color:#ffffff; background:#0b1f3f;'
       ),
     ),
 
@@ -169,7 +169,7 @@ return [
     |---------------------------------------------------|
     | List of Available buttons:                        |
     |---------------------------------------------------|
-    | https://linkstackorg.github.io/buttons/           |
+    | https://tnscard.com           |
     |---------------------------------------------------|
     */
 

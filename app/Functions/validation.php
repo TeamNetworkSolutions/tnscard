@@ -53,7 +53,7 @@ if (!function_exists('sanitize_rich_text')) {
 
         $dom = new \DOMDocument('1.0', 'UTF-8');
         $previousUseErrors = libxml_use_internal_errors(true);
-        $wrapperId = 'linkstack-rich-text-root';
+        $wrapperId = 'tnscard-rich-text-root';
         $dom->loadHTML('<?xml encoding="UTF-8"><div id="' . $wrapperId . '">' . $html . '</div>', LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
         libxml_clear_errors();
         libxml_use_internal_errors($previousUseErrors);
@@ -188,7 +188,7 @@ if (!function_exists('sanitize_rich_text')) {
 
         $dom = new \DOMDocument('1.0', 'UTF-8');
         $previousUseErrors = libxml_use_internal_errors(true);
-        $wrapperId = 'linkstack-rich-text-root';
+        $wrapperId = 'tnscard-rich-text-root';
         $dom->loadHTML('<?xml encoding="UTF-8"><div id="' . $wrapperId . '">' . $html . '</div>', LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
         libxml_clear_errors();
         libxml_use_internal_errors($previousUseErrors);

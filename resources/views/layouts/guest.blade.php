@@ -10,10 +10,10 @@
 
         <script src="{{asset('assets/js/detect-dark-mode.js')}}"></script>
 
-		@if(file_exists(base_path("assets/linkstack/images/").findFile('favicon')))
-		<link rel="icon" type="image/png" href="{{ asset('assets/linkstack/images/'.findFile('favicon')) }}">
+		@if(file_exists(base_path("assets/tnscard/images/").findFile('favicon')))
+		<link rel="icon" type="image/png" href="{{ asset('assets/tnscard/images/'.findFile('favicon')) }}">
 		@else
-		<link rel="icon" type="image/svg+xml" href="{{ asset('assets/linkstack/images/logo.svg') }}">
+		<link rel="icon" type="image/svg+xml" href="{{ asset('assets/tnscard/images/logo.svg') }}">
 		@endif
 
         <title>{{ config('app.name') }}</title>

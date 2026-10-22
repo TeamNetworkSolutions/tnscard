@@ -4,21 +4,21 @@
       var submitBtn = $('#submit-btn');
       
       $('#littlelink_name').on('keyup', function () {
-        var littlelinkName = $(this).val();
+        var tnsprofileName = $(this).val();
   
-        if (littlelinkName.trim() !== '') {
+        if (tnsprofileName.trim() !== '') {
           $.ajax({
             type: 'POST',
             url: '{{url("/validate-handle")}}',
             data: {
               '_token': '{{ csrf_token() }}',
-              'littlelink_name': littlelinkName
+              'littlelink_name': tnsprofileName
             },
             success: function (data) {
               $('#littlelink_name').removeClass('is-valid is-invalid');
               $('#username-error').remove();
   
-              if (typeof exceptionvar !== 'undefined' && littlelinkName.trim() === exceptionvar) {
+              if (typeof exceptionvar !== 'undefined' && tnsprofileName.trim() === exceptionvar) {
                 submitBtn.prop('disabled', false);
               } else {
                 if (data.valid) {

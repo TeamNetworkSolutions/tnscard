@@ -58,34 +58,6 @@ return [
         ],
 
 
-    /*
-    |--------------------------------------------------------------------------
-    | Built in SMTP server
-    |--------------------------------------------------------------------------
-    |
-    | LinkStack now includes an open and free to use SMTP server. 
-    | Mails from this service may only be used for
-    | password recovery and registration purposes involving
-    | users personal LinkStack or LittleLink Admin pages.
-    | Users of this service must abide by our Terms and Conditions
-    | found at https://linkstack.org/mail.
-    |
-    */
-
-        'built-in' => [
-            'transport' => 'smtp',
-            'host' => 'mail.llc.ovh',
-            'port' => '587',
-            'encryption' => 'tls',
-            'username' => 'littlelink-custom@mail.llc.ovh',
-            'password' => 'qWrf<S7sP5',
-            'timeout' => null,
-            'auth_mode' => null,
-        'from' => [
-			'address' => 'littlelink-custom@mail.llc.ovh',
-			'name' => env('MAIL_FROM_NAME'),
-			],
-        ],
 
     ],
 

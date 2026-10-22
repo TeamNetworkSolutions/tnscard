@@ -14,12 +14,12 @@
     @endphp
 @else
         <div class="logo-container fadein">
-           <img class="logo-img" src="{{ asset('assets/linkstack/images/logo.svg') }}" alt="Logo">
+           <img class="logo-img" src="{{ asset('assets/tnscard/images/logo.svg') }}" alt="Logo">
         </div>
-        <h1>{{__('messages.Setup LinkStack')}}</h1>
+        <h1>{{__('messages.Setup TNS Card')}}</h1>
         <p class="inst-txt">
         <div class="left-txt glass-container">
-         {{__('messages.Welcome to the setup for LinkStack!')}}<br><br>
+         {{__('messages.Welcome to the setup for TNS Card!')}}<br><br>
         <b>{{__('messages.This setup will:')}}</b><br>
         {{__('messages.Check the server dependencies')}}<br>
         {{__('messages.Setup the database')}}<br>
@@ -65,7 +65,7 @@
 </form>
 {{-- end language --}}
 
-<p style="margin:25px;max-width:350px;">{{__('messages.setup.disclaimer')}} <a href="https://linkstack.org/terms-and-conditions/" target="_blank">{{__('messages.Terms and Conditions')}}</a>.</p>
+<p style="margin:25px;max-width:350px;">{{__('messages.setup.disclaimer')}} <a href="https://tnscard.com" target="_blank">{{__('messages.Terms and Conditions')}}</a>.</p>
 
         &ensp;<a class="btn" href="{{url('?2')}}"><button>{{__('messages.Next')}}</button></a>&ensp;
 @endif
@@ -76,7 +76,7 @@
 {{-- Landing page --}}
         
         <div class="logo-container fadein">
-           <img class="logo-img" src="{{ asset('assets/linkstack/images/logo.svg') }}" alt="Logo">
+           <img class="logo-img" src="{{ asset('assets/tnscard/images/logo.svg') }}" alt="Logo">
         </div>
         <h1>{{__('messages.Setup failed')}}</h1>
         <p class="inst-txt">{{__('messages.An error has occured. Please try again')}}</p>
@@ -90,7 +90,7 @@
 {{-- Landing page --}}
         
         <div class="logo-container fadein">
-           <img class="logo-img" src="{{ asset('assets/linkstack/images/logo.svg') }}" alt="Logo">
+           <img class="logo-img" src="{{ asset('assets/tnscard/images/logo.svg') }}" alt="Logo">
         </div>
         <h1>{{__('messages.Dependency check')}}</h1>
         <p class="inst-txt">{{__('messages.Required PHP modules:')}}</p>
@@ -128,9 +128,9 @@
 {{-- Landing page --}}
         
         <div class="logo-container fadein">
-           <img class="logo-img" src="{{ asset('assets/linkstack/images/logo.svg') }}" alt="Logo">
+           <img class="logo-img" src="{{ asset('assets/tnscard/images/logo.svg') }}" alt="Logo">
         </div>
-        <h1>{{__('messages.Setup LinkStack')}}</h1>
+        <h1>{{__('messages.Setup TNS Card')}}</h1>
         <p class="inst-txt">{{__('messages.Select a database type')}}</p>
 <p>{{__('messages.Under most circumstances, we recommend using SQLite')}}
    <br>
@@ -154,9 +154,9 @@
 {{-- Landing page --}}
         
         <div class="logo-container fadein">
-           <img class="logo-img" src="{{ asset('assets/linkstack/images/logo.svg') }}" alt="Logo">
+           <img class="logo-img" src="{{ asset('assets/tnscard/images/logo.svg') }}" alt="Logo">
         </div>
-        <h1>{{__('messages.Setup LinkStack')}}</h1>
+        <h1>{{__('messages.Setup TNS Card')}}</h1>
         <p class="inst-txt">MySQL</p>
 
 <form id="home-url-form" action="{{route('mysql')}}" enctype="multipart/form-data" method="post">
@@ -186,9 +186,9 @@
 {{-- Landing page --}}
         
         <div class="logo-container fadein">
-           <img class="logo-img" src="{{ asset('assets/linkstack/images/logo.svg') }}" alt="Logo">
+           <img class="logo-img" src="{{ asset('assets/tnscard/images/logo.svg') }}" alt="Logo">
         </div>
-        <h1>{{__('messages.Setup LinkStack')}}</h1>
+        <h1>{{__('messages.Setup TNS Card')}}</h1>
         <p class="inst-txt">{{__('messages.Create an admin account')}}</p>
 
 <form id="home-url-form" action="{{route('createAdmin')}}" enctype="multipart/form-data" method="post">
@@ -216,9 +216,9 @@
 {{-- Landing page --}}
         
         <div class="logo-container fadein">
-           <img class="logo-img" src="{{ asset('assets/linkstack/images/logo.svg') }}" alt="Logo">
+           <img class="logo-img" src="{{ asset('assets/tnscard/images/logo.svg') }}" alt="Logo">
         </div>
-        <h1>{{__('messages.Setup LinkStack')}}</h1>
+        <h1>{{__('messages.Setup TNS Card')}}</h1>
         <p class="inst-txt">{{__('messages.Configure your page')}}</p>
 <form id="home-url-form" action="{{route('options')}}" enctype="multipart/form-data" method="post">
 <div class="form-group col-lg-8">
@@ -226,8 +226,8 @@
 
 <label>{{__('messages.Enable registration:')}}</label>
 <select style="max-width:300px" class="form-control" name="register">
+<option value="No" selected>{{__('messages.No')}}</option>
 <option value="Yes">{{__('messages.Yes')}}</option>
-<option value="No">{{__('messages.No')}}</option>
 </select>
 
 <label>{{__('messages.Enable email verification:')}}</label>
@@ -261,7 +261,7 @@ $("#select").change(function(){
 </script>
 
 <label>{{__('messages.App Name:')}}</label>
-<input style="max-width:275px;" class="form-control" value="LinkStack" name="app" type="text" required>
+<input style="max-width:275px;" class="form-control" value="TNS Card" name="app" type="text" required>
 
 </div></div><br>
 <input type="hidden" name="_token" value="{{csrf_token()}}">

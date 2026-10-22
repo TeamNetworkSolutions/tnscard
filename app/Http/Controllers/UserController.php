@@ -81,14 +81,14 @@ class UserController extends Controller
         return view('studio/index', ['greeting' => $userinfo->name, 'toplinks' => $topLinks, 'links' => $links, 'clicks' => $clicks, 'pageStats' => $pageStats]);
     }
 
-    //Show littlelink page. example => http://127.0.0.1:8000/+admin
-    public function littlelink(request $request)
+    //Show tnsprofile page. example => http://127.0.0.1:8000/+admin
+    public function tnsprofile(request $request)
     {
         if(isset($request->useif)){
-            $littlelink_name = User::select('littlelink_name')->where('id', $request->littlelink)->value('littlelink_name');
-            $id = $request->littlelink;
+            $littlelink_name = User::select('littlelink_name')->where('id', $request->tnsprofile)->value('littlelink_name');
+            $id = $request->tnsprofile;
         } else {
-            $littlelink_name = $request->littlelink;
+            $littlelink_name = $request->tnsprofile;
             $id = User::select('id')->where('littlelink_name', $littlelink_name)->value('id');
         }
 
@@ -125,11 +125,11 @@ class UserController extends Controller
             }
         }
 
-        return view('linkstack.linkstack', ['userinfo' => $userinfo, 'information' => $information, 'links' => $links, 'littlelink_name' => $littlelink_name]);
+        return view('tnscard.tnscard', ['userinfo' => $userinfo, 'information' => $information, 'links' => $links, 'littlelink_name' => $littlelink_name]);
     }
 
-    //Show littlelink page as home page if set in config
-    public function littlelinkhome(request $request)
+    //Show tnsprofile page as home page if set in config
+    public function tnsprofilehome(request $request)
     {
         $littlelink_name = env('HOME_URL');
         $id = User::select('id')->where('littlelink_name', $littlelink_name)->value('id');
@@ -163,7 +163,7 @@ class UserController extends Controller
             }
         }
 
-        return view('linkstack.linkstack', ['userinfo' => $userinfo, 'information' => $information, 'links' => $links, 'littlelink_name' => $littlelink_name]);
+        return view('tnscard.tnscard', ['userinfo' => $userinfo, 'information' => $information, 'links' => $links, 'littlelink_name' => $littlelink_name]);
     }
 
     //Redirect to user page
@@ -481,7 +481,7 @@ class UserController extends Controller
         return redirect('/studio/links');
     }
 
-    //Raise link on the littlelink page
+    //Raise link on the tnsprofile page
     public function upLink(request $request)
     {
         $linkId = $request->id;
@@ -578,7 +578,7 @@ class UserController extends Controller
         return Redirect('#result');
     }
 
-    //Show littlelinke page for edit
+    //Show tnsprofilee page for edit
     public function showPage(request $request)
     {
         $userId = Auth::user()->id;
@@ -588,7 +588,7 @@ class UserController extends Controller
         return view('/studio/page', $data);
     }
 
-    //Save littlelink page (name, description, logo)
+    //Save tnsprofile page (name, description, logo)
     public function editPage(Request $request)
     {
         $userId = Auth::user()->id;
@@ -844,7 +844,7 @@ class UserController extends Controller
     //Show user theme credit page
     public function theme(request $request)
     {
-        $littlelink_name = $request->littlelink;
+        $littlelink_name = $request->tnsprofile;
         $id = User::select('id')->where('littlelink_name', $littlelink_name)->value('id');
 
         if (empty($id)) {

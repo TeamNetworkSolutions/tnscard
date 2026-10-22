@@ -28,7 +28,7 @@ class PageSeeder extends Seeder
 
 <p><strong><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEX///8AAABVwtN+AAAAAXRSTlMAQObYZgAAAAFiS0dEAf8CLd4AAAAEZ0lGZwAAAAp8We1TAAAADGNtUFBKQ21wMDcxMgAAAAdPbbelAAAACklEQVQY02NgAAAAAgABmGNs1wAAAABJRU5ErkJggg==" style="height:1px; width:1px" /></strong><strong>2.&nbsp;INTELLECTUAL PROPERTY RIGHTS</strong></p>
 
-<p><a href="https://linkstack.org/">LinkStack</a> is licensed under the GNU Affero General Public License v3.0.</p>
+<p>TNS Card is based on the open-source LinkStack project and is licensed under the GNU Affero General Public License v3.0. The source code is available at <a href="https://github.com/TeamNetworkSolutions/tnscard">github.com/TeamNetworkSolutions/tnscard</a>.</p>
 
 <p><strong><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABlBMVEX///8AAABVwtN+AAAAAXRSTlMAQObYZgAAAAFiS0dEAf8CLd4AAAAEZ0lGZwAAAAp8We1TAAAADGNtUFBKQ21wMDcxMgAAAAdPbbelAAAACklEQVQY02NgAAAAAgABmGNs1wAAAABJRU5ErkJggg==" style="height:1px; width:1px" /></strong><strong>3.&nbsp;USER REPRESENTATIONS</strong></p>
 
@@ -331,18 +331,9 @@ class PageSeeder extends Seeder
 ',
 
                 'contact' => '
-<p><strong><a href="https://linkstack.org/">LinkStack</a></strong> is a free, open source&nbsp;link&nbsp;sharing platform. We depend on community feedback to steadily improve this project.</p>
+<p><strong>TNS Card</strong> &mdash; digital business cards and mini websites by Team Network Solutions.</p>
 
-<p><strong>Feel free to send us your feedback!</strong></p>
-
-<ul>
-	<li>Join our <a href="https://discord.linkstack.org/">community Discord</a></li>
-	<li>Join the <a href="https://github.com/linkstackorg/linkstack/discussions">discussion forum</a></li>
-	<li>Request a feature and add it to the <a href="https://github.com/linkstackorg/linkstack/discussions/49">to-do list</a></li>
-	<li>Write us an <a href="mailto:info@linkstack.org?subject=Inquiry%20about%20LinkStack">email</a></li>
-</ul>
-
-<p>If you&#39;re having any trouble or encountered a bug, feel free to <a href="https://github.com/linkstackorg/linkstack/issues">open an issue on GitHub</a>.</p>
+<p>Questions, a new card, or changes to your page? Email us at <a href="mailto:info@tnscard.com?subject=TNS%20Card">info@tnscard.com</a> or visit <a href="https://tnscard.com">tnscard.com</a>.</p>
 
 <p>&nbsp;</p>
 ',

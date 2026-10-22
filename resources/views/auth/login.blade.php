@@ -23,19 +23,19 @@ foreach($pages as $page)
               <a href="{{ url('') }}" class="d-flex align-items-center mb-3">
                 <!--Logo start-->
                 <div class="logo-main">
-                    @if(file_exists(base_path("assets/linkstack/images/").findFile('avatar')))
+                    @if(file_exists(base_path("assets/tnscard/images/").findFile('avatar')))
                     <div class="logo-normal">
-                      <img class="img logo" src="{{ asset('assets/linkstack/images/'.findFile('avatar')) }}" style="width:auto;height:30px;">
+                      <img class="img logo" src="{{ asset('assets/tnscard/images/'.findFile('avatar')) }}" style="width:auto;height:30px;">
                   </div>
                   <div class="logo-mini">
-                    <img class="img logo" src="{{ asset('assets/linkstack/images/'.findFile('avatar')) }}" style="width:auto;height:30px;">
+                    <img class="img logo" src="{{ asset('assets/tnscard/images/'.findFile('avatar')) }}" style="width:auto;height:30px;">
                   </div>
                     @else
                     <div class="logo-normal">
-                      <img class="img logo" type="image/svg+xml" src="{{ asset('assets/linkstack/images/logo.svg') }}" width="30px" height="30px">
+                      <img class="img logo" type="image/svg+xml" src="{{ asset('assets/tnscard/images/logo.svg') }}" width="30px" height="30px">
                   </div>
                   <div class="logo-mini">
-                    <img class="img logo" type="image/svg+xml" src="{{ asset('assets/linkstack/images/logo.svg') }}" width="30px" height="30px">
+                    <img class="img logo" type="image/svg+xml" src="{{ asset('assets/tnscard/images/logo.svg') }}" width="30px" height="30px">
                   </div>
                     @endif
                     </div>
@@ -107,7 +107,7 @@ foreach($pages as $page)
                 @else
                 <br>
                 @endif
-                @if ((env('ALLOW_REGISTRATION')) and !config('linkstack.single_user_mode'))
+                @if ((env('ALLOW_REGISTRATION')) and !config('tnscard.single_user_mode'))
                 <p class="mt-3 text-center">
                   {{__('messages.Don’t have an account?')}} <a href="{{ route('register') }}" class="text-underline">{{__('messages.Click here to sign up')}}.</a>
                 </p>

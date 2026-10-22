@@ -6,12 +6,12 @@ REGISTER_AUTH=verified
 #=NOTIFY_EVENTS notifies admins if an important event is happening, such as polls about the future of this project or security vulnerabilities.
 NOTIFY_EVENTS=true
 #=NOTIFY_UPDATES either true or false.
-NOTIFY_UPDATES=true
+NOTIFY_UPDATES=false
 DISPLAY_FOOTER=true
 DISPLAY_CREDIT=true
 
 #Home URL=Changes if a user profile should be displayed as the homepage.
-#=Leave empty to use the default homepage. To set your profile as the homepage, enter a LittleLink name. You can find this on the user panel under the page setting, the name is what comes after the '@'.
+#=Leave empty to use the default homepage. To set your profile as the homepage, enter a TNS Card name. You can find this on the user panel under the page setting, the name is what comes after the '@'.
 #=(e.g. 'admin' without the '@')
 HOME_URL=
 
@@ -19,11 +19,13 @@ HOME_URL=
 #=Either true or false.
 ALLOW_USER_HTML=true
 
-#App Settings=Changes settings regarding your LinkStack installation. You probably only want to change the App Name setting.
+#App Settings=Changes settings regarding your TNS Card installation. You probably only want to change the App Name setting.
 #=App_Name changes  the displayed name for the App in the title, for example.
-APP_NAME="LinkStack"
+APP_NAME="TNS Card"
+#=Public link to this site's source code. Required by the AGPL-3.0 license.
+SOURCE_CODE_URL="https://github.com/TeamNetworkSolutions/tnscard"
 APP_KEY=
-#=The APP_URL should be left empty under most circumstances. This setting is not required for LinkStack, and you should only change this if required for your setup.
+#=The APP_URL should be left empty under most circumstances. This setting is not required for TNS Card, and you should only change this if required for your setup.
 APP_URL=
 
 #ENABLE_BUTTON-EDITOR=Determines if the custom button editor should be enabled or not, default is true.
@@ -43,9 +45,9 @@ MAINTENANCE_MODE=false
 #Database Settings=Should be left alone. If you wish to use mysql you'd have to seed the database again.
 DB_CONNECTION=sqlite
 
-#Mail Settings=LinkStack comes with a free to use built-in SMTP server for sending mail. You can leave this setting as is, if you wish to use this service please read our terms and conditions at llc-mail.tru.io. If you do not wish to use the built-in SMTP server, change the setting below
-#=MAIL_MAILER either smtp or built-in. Make sure to change this setting if you want to add a custom SMTP server.
-MAIL_MAILER=built-in
+#Mail Settings=Enter your own SMTP server (for example Gmail, Microsoft 365, or your email provider) so password-reset emails can be sent.
+#=MAIL_MAILER either smtp or sendmail.
+MAIL_MAILER=smtp
 MAIL_HOST=
 MAIL_PORT=
 MAIL_USERNAME=
@@ -68,13 +70,13 @@ SESSION_DRIVER=file
 SESSION_LIFETIME=120
 
 #Updater Settings=Changes settings regarding the built-in updater.
-#=JOIN_BETA either true or false. Learn more about this setting at llc.ovh/beta.
+#=JOIN_BETA either true or false. Learn more about this setting at https://tnscard.com
 JOIN_BETA=false
 #=SKIP_UPDATE_BACKUP either true or false. Skips backup before updating. Use at your own risk.
 SKIP_UPDATE_BACKUP=false
 
 #=CUSTOM_META_TAGS either true or false. Used to enable setting in advanced config file (config/advanced-config.php).
-#=You can read more about this config at https://llc.ovh/advanced-config.
+#=You can read more about this config at https://tnscard.com
 CUSTOM_META_TAGS=false
 
 #=FORCE_HTTPS either true or false. Used to redirect any request to HTTPS. 
@@ -87,10 +89,10 @@ ALLOW_CUSTOM_CODE_IN_THEMES=true
 
 #ENABLE_THEME_UPDATER=Determines if the theme updater should be enabled or not, default is true.
 #=ENABLE_THEME_UPDATER either true or false.
-ENABLE_THEME_UPDATER=true
+ENABLE_THEME_UPDATER=false
 
 #Needs to be configured first.
-#Read more at: https://linkstack.org/social-login
+#Read more at: https://tnscard.com
 ENABLE_SOCIAL_LOGIN=false
 
 #Sets if a plain PNG or iframe should be used for the theme preview image

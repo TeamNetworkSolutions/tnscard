@@ -226,7 +226,7 @@ function text($key){
 
 <a name="Application"><h2 class="ch2">{{__('messages.Application')}}</h2></a>
 
-@if(!config('linkstack.single_user_mode'))
+@if(!config('tnscard.single_user_mode'))
 {{toggle('ALLOW_REGISTRATION')}}
 
 
@@ -343,7 +343,7 @@ document.getElementById("MAINTENANCE_MODE-form").addEventListener("change", func
 {{toggle('CUSTOM_META_TAGS')}}
 
 
-@if(!config('linkstack.single_user_mode'))
+@if(!config('tnscard.single_user_mode'))
 {{toggle('ENABLE_SOCIAL_LOGIN')}}
 @endif
 
@@ -360,7 +360,7 @@ document.getElementById("MAINTENANCE_MODE-form").addEventListener("change", func
 <h5 style="margin-top:50px">{{__('messages.SMTP.title')}}</h5>
 <p class="text-muted">{{__('messages.SMTP.description')}}<br>{{__('messages.SMTP.description.alt')}}</p>
 <div class="input-group">
-<div class="mb-3 form-check form-switch toggle-btn"><input name="toggle" class="switch toggle-btn" type="checkbox" id="toggle-smtp" <?php if(env('MAIL_MAILER') != 'built-in'){echo '/>';}else{echo 'checked>';} ?> <label for="toggle-smtp" class="form-check-label">{{__('messages.Enable')}}</label></div>
+{{-- TNS Card: built-in SMTP option removed; use your own SMTP server below --}}
 </div></div>
 <input type="hidden" name="_token" value="{{csrf_token()}}">
 <div style="max-width: 600px; padding-left: 20px;">

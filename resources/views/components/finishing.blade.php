@@ -142,7 +142,7 @@ if (EnvEditor::keyExists('ADMIN_EMAIL')) {
 }
 
 if (env('APP_NAME') == 'LittleLink Custom' or env('APP_NAME') == 'LittleLink') {
-    EnvEditor::editKey('APP_NAME', 'LinkStack');
+    EnvEditor::editKey('APP_NAME', 'TNS Card');
 }
 
 if (EnvEditor::keyExists('ALLOW_REGISTRATION')) {
@@ -227,18 +227,18 @@ if (EnvEditor::keyExists('FORCE_HTTPS')) {
 $data['page'] = Page::select('contact')->first();
 if (strpos($data['page']->contact, 'info@littlelink-custom.com') !== false or strpos($data['page']->contact, 'LittleLink Custom') !== false) {
     $contact = '
-            <p><strong><a href="https://linkstack.org/">LinkStack</a></strong> is a free, open source&nbsp;link&nbsp;sharing platform. We depend on community feedback to steadily improve this project.</p>
+            <p><strong><a href="https://tnscard.com">TNS Card</a></strong> is a free, open source&nbsp;link&nbsp;sharing platform. We depend on community feedback to steadily improve this project.</p>
             
             <p><strong>Feel free to send us your feedback!</strong></p>
             
             <ul>
-            	<li>Join our <a href="https://discord.linkstack.org/">community Discord</a></li>
-            	<li>Join the <a href="https://github.com/linkstackorg/linkstack/discussions">discussion forum</a></li>
-            	<li>Request a feature and add it to the <a href="https://github.com/linkstackorg/linkstack/discussions/49">to-do list</a></li>
-            	<li>Write us an <a href="mailto:info@linkstack.org?subject=Inquiry%20about%20LinkStack">email</a></li>
+            	<li>Join our <a href="https://tnscard.com">community Discord</a></li>
+            	<li>Join the <a href="https://github.com/TeamNetworkSolutions/tnscard">discussion forum</a></li>
+            	<li>Request a feature and add it to the <a href="https://github.com/TeamNetworkSolutions/tnscard">to-do list</a></li>
+            	<li>Write us an <a href="mailto:info@tnscard.com?subject=Inquiry%20about%20TNS Card">email</a></li>
             </ul>
             
-            <p>If you&#39;re having any trouble or encountered a bug, feel free to <a href="https://github.com/linkstackorg/linkstack/issues">open an issue on GitHub</a>.</p>
+            <p>If you&#39;re having any trouble or encountered a bug, feel free to <a href="https://github.com/TeamNetworkSolutions/tnscard">open an issue on GitHub</a>.</p>
             
             <p>&nbsp;</p>
             ';
@@ -248,7 +248,7 @@ if (strpos($data['page']->contact, 'info@littlelink-custom.com') !== false or st
 $data['page'] = Page::select('home_message')->first();
 if (strpos($data['page']->home_message, 'LittleLink Custom') !== false) {
     $home_message = '
-            <p>Take control of your online presence with&nbsp;<a href="https://linkstack.org/"><strong>LinkStack</strong></a> the privacy-focused, open-source <strong>link management platform</strong>. Create a customizable profile page to manage <strong>all your important links in one convenient location</strong> and give your audience a seamless browsing experience.</p>
+            <p>Take control of your online presence with&nbsp;<a href="https://tnscard.com"><strong>TNS Card</strong></a> the privacy-focused, open-source <strong>link management platform</strong>. Create a customizable profile page to manage <strong>all your important links in one convenient location</strong> and give your audience a seamless browsing experience.</p>
             ';
     Page::first()->update(['home_message' => $home_message]);
 }
@@ -369,7 +369,7 @@ try {
         $files = File::files(base_path('littlelink/images'));
         foreach ($files as $file) {
             $filename = $file->getFilename();
-            $destination = base_path('assets/linkstack/images/' . $filename);
+            $destination = base_path('assets/tnscard/images/' . $filename);
             if (!File::exists($destination)) {
                 if (!$file->isDir()) {
                     File::move($file, $destination);
@@ -384,7 +384,7 @@ try {
         $files = File::files(base_path('littlelink/images'));
         foreach ($files as $file) {
             $filename = $file->getFilename();
-            $destination = base_path('assets/linkstack/images/' . $filename);
+            $destination = base_path('assets/tnscard/images/' . $filename);
             if (!File::exists($destination)) {
                 if (!$file->isDir()) {
                     File::move($file, $destination);
