@@ -201,3 +201,33 @@ function footer($key)
     }
     return $title;
 }
+/**
+ * Block text helpers.
+ *
+ * resources/views/studio/edit-link.blade.php calls bt() and
+ * block_text_translation_check(), but LinkStack 4.8.7 never defines them, so
+ * opening the "Add Link" block picker fails with a 500. These restore the
+ * intended behaviour: a block whose own title or description has a
+ * translation uses it, and anything else falls back to the text the block
+ * ships with (the view then uses the block.title.<type> keys).
+ */
+function bt($text)
+{
+    if (!is_string($text) || $text === '') {
+        return $text;
+    }
+    $key = 'messages.' . $text;
+    $translated = __($key);
+
+    return $translated === $key ? $text : $translated;
+}
+
+function block_text_translation_check($text)
+{
+    if (!is_string($text) || $text === '') {
+        return false;
+    }
+    $key = 'messages.' . $text;
+
+    return __($key) !== $key;
+}
